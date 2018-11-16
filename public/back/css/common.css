@@ -11,6 +11,9 @@ ul {
   padding: 0;
   margin: 0;
 }
+.red {
+  color: #a94442;
+}
 
 .body_bg {
   background-color: #222D32;
@@ -39,7 +42,14 @@ ul {
   left: 0;
   top: 0;
   background-color: #222D32;
+  z-index: 999;
+  transition: all 1s;
 }
+.lt_aside.hidemenu {
+  left: -180px;
+}
+
+
 .lt_aside .brand {
   width: 180px;
   height: 50px;
@@ -102,6 +112,10 @@ ul {
   padding-left: 180px;
   padding-top: 50px;
   background-color: pink;
+  transition: all 1s;
+}
+.lt_main.hidemenu {
+  padding-left: 0px;
 }
 .lt_topbar {
   position: fixed;
@@ -111,6 +125,10 @@ ul {
   height: 50px;
   background-color: #3c8dbc;
   padding-left: 180px;
+  transition: all 1s;
+}
+.lt_topbar.hidemenu {
+  padding-left: 0px;
 }
 .lt_topbar .icon_left,
 .lt_topbar .icon_right {
