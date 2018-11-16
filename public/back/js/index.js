@@ -42,8 +42,6 @@ $(function() {
   echarts_left.setOption(option1);
 
 
-
-
   // 基于准备好的dom，初始化echarts实例
   var echarts_right = echarts.init(document.querySelector(".echarts_right"));
 
