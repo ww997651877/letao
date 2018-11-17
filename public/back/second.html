@@ -100,13 +100,31 @@
           </div>
           <!-- 中间 -->
           <div class="modal-body">
-              <!-- 在每一行外层要套一个form-group父元素（规范） 
-                将来表单校验依赖于这个父元素 实现添加提示信息 
-                没有form-group    表单校验会报错
-                -->
+              
               <div class="form-group">
-                <input type="text" name="categoryName" class="form-control" placeholder="请输入分类">
+                <!-- 下拉菜单 -->
+                  <div class="dropdown">
+                      <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown">
+                        请选择：一级分类
+                        <span class="caret"></span>
+                      </button>
+                      <ul class="dropdown-menu">
+                        <li><a href="#">鹏鹏馆</a></li>
+                        
+                      </ul>
+                  </div>
               </div>
+
+              <div class="form-group">
+                <input type="text" name="brandName" class="form-control" placeholder="请输入二级分类">
+              </div>
+
+              <div class="form-group">
+                <button class="btn btn-success">上传图片</button>
+              </div>
+              <div class="form-group">
+                  <img style="height: 100px;" src="./images/1234.jpg" alt="">
+                </div>
           </div>
           <!-- 底部 -->
           <div class="modal-footer">
