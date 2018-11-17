@@ -69,6 +69,13 @@ $(function() {
     // 将文本设置给按钮
     $('#dropdownText').text( txt );
     
+    // 获取id，设置给准备好的input
+    var id = $(this).data('id');
+    $('[name="categoryId"]').val(id);
+    // $('[name="categoryId"]').trigger('input');//被选定元素事件触发
+
+    // 手动将 name="categoryId" 的校验状态，改成VALID 校验成功
+    $('#form').data('bootstrapValidator').updateStatus('categoryId','VALID');
   });
 
   // 4.进行文件上传初始化
@@ -83,6 +90,50 @@ $(function() {
       var picUrl = result.picAddr;
       // 设置给img的src
       $('#imgBox img').attr('src', picUrl);
+
+      // 将src路径，实时设置给input
+      $('[name="brandLogo"]').val(picUrl);
+
+      // 将name="brandLogo"的校验状态，改成成功
+      $('#form').data('bootstrapValidator').updateStatus('brandLogo','VALID');
+    }
+  });
+
+  // 5.配置表单校验
+  $('#form').bootstrapValidator({
+
+    // 配置排除项，默认会对隐藏域进行排除，我们需要对隐藏域进行校验
+    excluded: [],
+
+    // 配置校验图标
+    feedbackIcons: {
+      valid: 'glyphicon glyphicon-heart',    // 成功
+      invalid: 'glyphicon glyphicon-remove',    // 失败
+      validating: 'glyphicon glyphicon-refresh'    // 校验中
+    },
+    // 校验字段
+    fields: {
+      categoryId: {
+        validators: {
+          notEmpty: {
+            message: '请选择一级分类'
+          }
+        }
+      },
+      brandName: {
+        validators: {
+          notEmpty: {
+            message: '请输入二级分类名称'
+          }
+        }
+      },
+      brandLogo: {
+        validators: {
+          notEmpty: {
+            message: '请选择图片'
+          }
+        }
+      }
     }
   })
 
