@@ -9,6 +9,14 @@ ul {
   padding: 0;
   margin: 0;
 }
+.red {
+  color: #A94442;
+}
+table.table-bordered th,
+table.table-bordered td {
+  text-align: center;
+  vertical-align: middle;
+}
 
 
 .body_bg {
@@ -109,7 +117,7 @@ ul {
   top: 0;
   width: 100%;
   height: 50px;
-  background-color: skyblue;
+  background-color: palevioletred;
   padding-left: 180px;
   transition: all 1s;
 }
