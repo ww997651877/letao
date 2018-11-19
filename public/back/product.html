@@ -31,10 +31,10 @@
           <a href="javascript:;" class="category"><i class="glyphicon glyphicon-list"></i><span>分类管理</span></a>
           <div class="child" style="display: block;">
             <a href="first.html">一级分类</a>
-            <a class="current" href="second.html">二级分类</a>
+            <a href="second.html">二级分类</a>
           </div>
         </li>
-        <li><a href="product.html"><i class="glyphicon glyphicon-tags"></i><span>商品管理</span></a></li>
+        <li><a class="current" href="product.html"><i class="glyphicon glyphicon-tags"></i><span>商品管理</span></a></li>
       </ul>
     </div>
   </div>
@@ -117,6 +117,8 @@
                   </div>
                   <input type="hidden" name="brandId">
 
+                  <!-- 标记当前商品是否上下架，默认上架 -->
+                  <input type="hidden" name="statu" value="1">
               </div>
 
               <div class="form-group">
@@ -143,15 +145,16 @@
                 <!-- 
                      1.data-url 指定接口地址  将来给插件去获取的，去发送ajax的
                      2.name     指定后台接收的参数名
+                     3.multiple 可以选择多个文件（一般用于多文件上传）
                 -->
-                <input type="file" name="pic1" data-url="/category/addSecondCategoryPic" id="fileupload" style="display: none">
+                <input multiple type="file" name="pic1" data-url="/product/addProductPic" id="fileupload" style="display: none">
               </div>
               <div class="form-group" id="imgBox">
-                  <img style="height: 100px;" src="./images/1234.jpg" alt="">
-                  <img style="height: 100px;" src="./images/1234.jpg" alt="">
-                  <img style="height: 100px;" src="./images/1234.jpg" alt="">
-                  
-                  <input type="hidden" name="brandLogo">
+                  <!-- <img style="height: 100px;" src="./images/1234.jpg" alt=""> -->
+
+                  <!-- 准备一个隐藏域，专门用于校验 -->
+                  <input type="hidden" name="picStatus">
+
               </div>
           </div>
           <!-- 底部 -->
@@ -161,6 +164,7 @@
             <button type="submit" class="btn btn-primary">添加</button>
           </div>
         </form>
+        
       </div><!-- /.modal-content -->
     </div><!-- /.modal-dialog -->
   </div><!-- /.modal -->
