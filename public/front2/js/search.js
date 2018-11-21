@@ -75,6 +75,6 @@ $(function() {
 
     $('.search_input').val('');
 
-    localStorage.href = 'searchList.html?key=' + key;
+    location.href = 'searchList.html?key=' + key;
   })
 })
